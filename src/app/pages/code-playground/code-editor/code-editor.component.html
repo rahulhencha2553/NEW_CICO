@@ -1,0 +1,58 @@
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 5px 5px;">
+    <!-- Theme Selection Dropdown -->
+    <div style="display: flex; gap: 16px; ">
+        <div>
+            <select class="form-select mb-0 h-" aria-label="Default select example" (change)="changeConfig($event,'theme')" >
+            <option selected>Select Theme</option>
+            <option *ngFor="let theme of themes" [value]="theme">{{theme}}</option>
+          </select>
+        </div>
+      
+        <!-- Font Size Selection Dropdown -->
+        <div>
+          <select class="form-select mb-0 h-" aria-label="Default select example" (change)="changeConfig($event,'size')"> 
+            <option selected>Font Size</option>
+            <option value="14px">14px</option>
+            <option value="15px">15px</option>
+            <option value="16px">16px</option>
+            <option value="17px">17px</option>
+            <option value="18px">18px</option>
+            <option value="19px">19px</option>
+            <option value="20px">20px</option>
+          </select>
+        </div>
+    
+      
+        <!-- Language Mode Selection Dropdown -->
+        <div>
+          <select class="form-select mb-0 h-" aria-label="Default select example" (change)="changeConfig($event,'lang')">
+            <option selected>Language</option>
+            <option value="javascript">JavaScript</option>
+            <option value="typescript">TypeScript</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+          </select>
+        </div>
+    </div>
+  
+    <!-- Run Button -->
+    <div class="trytopnav" >
+        <div class="w3-bar " style="overflow: auto">
+          <button
+            id="runbtn"
+            class="w3-button w3-bar-item w3-hover-white w3-hover-text-green ga-tryit"
+           (click)="executeCode()" 
+          >
+            Run &#10095;
+          </button>
+        </div>
+      </div>
+  </div>
+  
+  <!-- Ace Editor Container -->
+  <!-- <div class="code-editor-container"> -->
+    <div id="code_editor" style="height: 100%; width: 100%;"></div>
+  <!-- </div> -->
+ 

@@ -1,0 +1,97 @@
+<div id="main" class="main dashboard_page">
+  <div class="profile d-flex mb-4">
+    <h1 class="font-27 font-700 secondary mb-0">Results & Statistics</h1>
+    <app-profile-bar></app-profile-bar>
+  </div>
+  <div class="scroll_dashboard" id="pdfTable" #pdfTable>
+
+    <!-- <div class="row attandance">
+
+      <div class="col-lg-6 col-md-6 mb-0 mb-md-3 mb-0 mb-md-3 mb-4">
+        <h3 class="admin-title font-17 font-600 secondary position-relative">Attendance</h3>
+        <div class="attendance-area position-relative">
+          <div class="calender_img">
+            <app-calender></app-calender>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 mb-0 mb-md-3 mb-0 mb-md-3 mb-4">
+        <h3 class="admin-title font-17 font-600 secondary position-relative">Test Detail</h3>
+        <div class="fees-area d-flex align-items-center justify-content-center chart-css">
+          
+          <div id="chart">
+            <apx-chart [colors]="normalExamOption.colors" [series]="normalExamOption.series"
+              [chart]="normalExamOption.chart" [labels]="normalExamOption.labels"
+              [responsive]="normalExamOption.responsive" [legend]="normalExamOption.legend"
+              [stroke]="normalExamOption.stroke"></apx-chart>
+          </div>
+          <div id="chart">
+            <apx-chart [colors]="scheduleExamOption.colors" [series]="scheduleExamOption.series"
+              [chart]="scheduleExamOption.chart" [labels]="scheduleExamOption.labels"
+              [responsive]="scheduleExamOption.responsive" [legend]="scheduleExamOption.legend"
+              [stroke]="scheduleExamOption.stroke"></apx-chart>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="row attendance">
+      <div class="col-lg-6 col-md-6 mb-0 mb-md-3 mb-0 mb-md-3 mb-4">
+        <div class="calender-img attendance_calender" style="
+          width: 100%;
+          min-height: 390px;
+          background-color: #49bfcf;
+          border-radius: 6px;
+        ">
+          <app-calender></app-calender>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 mb-0 mb-md-3 mb-0 mb-md-3 mb-4">
+        <div class="attendance-charbar" style="height: 390px">
+          <h2 class="font-17 font-700">Attendance</h2>
+          <div class="d-flex justify-content-center p-3">
+              <div id="chart">
+                <apx-chart [colors]="normalExamOption.colors" [series]="normalExamOption.series"
+                  [chart]="normalExamOption.chart" [labels]="normalExamOption.labels"
+                  [responsive]="normalExamOption.responsive" [legend]="normalExamOption.legend"
+                  [stroke]="normalExamOption.stroke"></apx-chart>
+              </div>
+              <div id="chart">
+                <apx-chart [colors]="scheduleExamOption.colors" [series]="scheduleExamOption.series"
+                  [chart]="scheduleExamOption.chart" [labels]="scheduleExamOption.labels"
+                  [responsive]="scheduleExamOption.responsive" [legend]="scheduleExamOption.legend"
+                  [stroke]="scheduleExamOption.stroke"></apx-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 admin-dash-assignment mb-4">
+      <h3 class="admin-title font-17 font-600 secondary position-relative">Assignments</h3>       
+    <div class="assignment-area">
+      <div id="chart">
+        <apx-chart [series]="assignmentOption.series" [chart]="assignmentOption.chart"
+          [dataLabels]="assignmentOption.dataLabels" [plotOptions]="assignmentOption.plotOptions"
+          [yaxis]="assignmentOption.yaxis" [legend]="assignmentOption.legend" [fill]="assignmentOption.fill"
+          [stroke]="assignmentOption.stroke" [tooltip]="assignmentOption.tooltip"
+          [xaxis]="assignmentOption.xaxis"></apx-chart>
+      </div>
+      </div>
+  </div>
+  <div class="col-md-12 admin-dash-assignment mb-4">
+    <h3 class="admin-title font-17 font-600 secondary position-relative">Tasks</h3>       
+  <div class="assignment-area">
+    <div id="chart">
+      <apx-chart [series]="assignmentOption.series" [chart]="assignmentOption.chart"
+        [dataLabels]="assignmentOption.dataLabels" [plotOptions]="assignmentOption.plotOptions"
+        [yaxis]="assignmentOption.yaxis" [legend]="assignmentOption.legend" [fill]="assignmentOption.fill"
+        [stroke]="assignmentOption.stroke" [tooltip]="assignmentOption.tooltip"
+        [xaxis]="assignmentOption.xaxis"></apx-chart>
+    </div>
+    </div>
+</div>
+    </div>
+  <img src="../../../assets/images/temp_img/pdf-icon.svg" #pdfButton id="pdf" (click)="downloadAsPDF()" class="pdf-icon">   
+  <app-right-side-bar></app-right-side-bar>
+
+</div>

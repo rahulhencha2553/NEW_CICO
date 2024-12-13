@@ -1,0 +1,115 @@
+<div id="main" class="main main_news">
+  <div class="profile d-flex mb-4">
+    <div class="assign-detail-heading">
+      <h1 class="font-27 font-700 secondary mb-0">Code-Playground</h1>
+    </div>
+    <app-profile-bar></app-profile-bar>
+  </div>
+
+  <div style="display: flex">
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 5px;
+        width: 100%;
+      "
+    >
+      <!-- Theme Selection Dropdown -->
+      <div style="display: flex; gap: 16px">
+        <div>
+          <select
+            class="form-select select_btn"
+            aria-label="Default select example"
+            (change)="changeConfig($event, 'theme')"
+          >
+            <option selected>Select Theme</option>
+            <option *ngFor="let theme of themes" [value]="theme">
+              {{ theme }}
+            </option>
+          </select>
+        </div>
+
+        <!-- Font Size Selection Dropdown -->
+        <div>
+          <select
+            class="form-select select_btn"
+            aria-label="Default select example"
+            (change)="changeConfig($event, 'size')"
+          >
+            <option selected value="16px">Font Size</option>
+            <option value="14px">14px</option>
+            <option value="15px">15px</option>
+            <option value="16px">16px</option>
+            <option value="17px">17px</option>
+            <option value="18px">18px</option>
+            <option value="19px">19px</option>
+            <option value="20px">20px</option>
+          </select>
+        </div>
+
+        <!-- Language Mode Selection Dropdown -->
+        <div>
+          <select
+            class="form-select select_btn"
+            aria-label="Default select example"
+            (change)="changeConfig($event, 'lang')"
+          >
+            <option selected value="java">Language</option>
+            <option value="javascript">JavaScript</option>
+            <option value="c">C</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+          </select>
+        </div>
+
+        <div *ngIf="selectedLang == 'java'">
+          <input
+            type="text"
+            class="form-control"
+            [ngClass]="!validFileName?' is-invalid':''"
+            id="validationServer03"
+            aria-describedby="validationServer03Feedback"
+            placeholder="File_Name.java"
+            [(ngModel)]="javaFileName"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Run Button -->
+      <div class="trytopnav">
+        <div class="w3-bar" style="overflow: auto">
+          <button
+            id="runbtn"
+            class="w3-button w3-bar-item w3-hover-white w3-hover-text-green ga-tryit"
+            (click)="executeCode()"
+          >
+            Run &#10095;
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="card">
+    <p-splitter [panelSizes]="[50, 50]" [minSizes]="[30, 30]" [style]="{ height: '615px' }" styleClass="mb-8">
+      <ng-template pTemplate>
+        <div id="code_editor" style="height: 100%; width: 100%;"></div>
+      </ng-template>
+      <ng-template pTemplate>
+        <div class="h-full w-full w-100 p-3" style="background-color: black; color: #ffffff; position: relative;">
+          <app-compiler-loader *ngIf="isLoading"></app-compiler-loader>
+          <!-- Compile Response -->
+          <pre *ngIf="!isLoading" class="w-full">{{ compileResponse }}</pre>
+        </div>
+      </ng-template>
+    </p-splitter>
+    
+  </div>
+  
+
+  <app-right-side-bar></app-right-side-bar>
+</div>
+

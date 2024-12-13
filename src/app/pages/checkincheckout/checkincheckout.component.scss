@@ -1,0 +1,53 @@
+.spinner-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+}
+
+.overlay-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.center-image {
+  max-width: 200px;
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+
+.time-display {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+.custom-spinner circle {
+  stroke: black;
+}
+
+.spin {
+  height: 147px !important;
+  width: 147px !important;
+}
+
+
+.mat-mdc-progress-spinner.mat-danger {
+  --mdc-circular-progress-active-indicator-color: red;
+}
+
+.mat-mdc-progress-spinner.mat-warning {
+  --mdc-circular-progress-active-indicator-color: orange;
+}
+
+.imageSize{
+  width: 100px;
+  height: 100px;
+}

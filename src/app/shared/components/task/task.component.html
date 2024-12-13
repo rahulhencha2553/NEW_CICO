@@ -1,0 +1,13 @@
+<div class="left-tasks" *ngFor="let obj of tasks;let i =  index">
+    <a href="" class="mt-2" routerLink="/{{role}}/taskdetails/{{obj.taskId}}">
+        <div class="TaskCard">
+            <div class="TaskName">{{obj.taskName}}  <span  *ngIf="obj.isCompleted" ><img class="checkicon" src="../../../../assets/images/temp_img/check_marker.png" alt=""></span>
+                
+            </div>
+            <div class="Button">View</div>
+           
+        </div>
+    </a>
+</div>
+    <app-pagination *ngIf="paginationManager.totalElements>pageRequest.pageSize"  [paginationManager]="paginationManager" (eventEmit)="getAllData($event)"
+            [type]="'taskSubmission'" [pageRequest]="pageRequest"></app-pagination>
